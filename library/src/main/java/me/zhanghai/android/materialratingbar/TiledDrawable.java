@@ -5,30 +5,28 @@
 
 package me.zhanghai.android.materialratingbar;
 
-import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 
-import me.zhanghai.android.materialratingbar.internal.ThemeUtils;
-
-class TintedTiledDrawable extends BaseDrawable {
+class TiledDrawable extends BaseDrawable {
 
     private Drawable mTileDrawable;
 
-    public TintedTiledDrawable(Drawable tileDrawable, boolean tintAsActivatedElseNormal,
-                               Context context) {
-        int tintColor = ThemeUtils.getColorFromAttrRes(tintAsActivatedElseNormal ?
-                R.attr.colorControlActivated : R.attr.colorControlNormal, context);
-        // setTint() has been overridden for compatibility; DrawableCompat won't work because
-        // wrapped Drawable won't be Animatable.
-        setTint(tintColor);
+    public TiledDrawable(Drawable tileDrawable) {
         mTileDrawable = tileDrawable;
     }
 
     public Drawable getTileDrawable() {
         return mTileDrawable;
+    }
+
+    @NonNull
+    @Override
+    public Drawable mutate() {
+        mTileDrawable = mTileDrawable.mutate();
+        return this;
     }
 
     @Override
@@ -50,12 +48,5 @@ class TintedTiledDrawable extends BaseDrawable {
             mTileDrawable.setBounds(x, 0, x + tileWidth, tileHeight);
             mTileDrawable.draw(canvas);
         }
-    }
-
-    @NonNull
-    @Override
-    public Drawable mutate() {
-        mTileDrawable = mTileDrawable.mutate();
-        return this;
     }
 }

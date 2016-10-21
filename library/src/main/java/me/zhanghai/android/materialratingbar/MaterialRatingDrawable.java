@@ -13,6 +13,8 @@ import android.graphics.drawable.LayerDrawable;
 import android.support.v7.content.res.AppCompatResources;
 import android.view.Gravity;
 
+import me.zhanghai.android.materialratingbar.internal.ThemeUtils;
+
 public class MaterialRatingDrawable extends LayerDrawable {
 
     public MaterialRatingDrawable(Context context) {
@@ -30,21 +32,27 @@ public class MaterialRatingDrawable extends LayerDrawable {
 
     private static Drawable createLayerDrawable(int tileResId, boolean tintAsActivatedElseNormal,
                                                 Context context) {
-        return new TintedTiledDrawable(AppCompatResources.getDrawable(context, tileResId),
-                tintAsActivatedElseNormal, context);
+        int tintColor = ThemeUtils.getColorFromAttrRes(tintAsActivatedElseNormal ?
+                R.attr.colorControlActivated : R.attr.colorControlNormal, context);
+        TiledDrawable drawable = new TiledDrawable(AppCompatResources.getDrawable(context,
+                tileResId));
+        //noinspection RedundantCast
+        ((TintableDrawable) drawable).setTint(tintColor);
+        return drawable;
     }
 
     @SuppressLint("RtlHardcoded")
-    private static Drawable createClippedLayerDrawable(int tileResId, boolean tintActivated,
+    private static Drawable createClippedLayerDrawable(int tileResId,
+                                                       boolean tintAsActivatedElseNormal,
                                                        Context context) {
-        return new ClipDrawable(createLayerDrawable(tileResId, tintActivated, context),
+        return new ClipDrawable(createLayerDrawable(tileResId, tintAsActivatedElseNormal, context),
                 Gravity.LEFT, ClipDrawable.HORIZONTAL);
     }
 
     public float getTileRatio() {
         // Cannot get wrapped drawable out of ClipDrawable until API 23, so we take the equivalent
         // from the android.R.id.background drawable.
-        Drawable tileDrawable = ((TintedTiledDrawable) findDrawableByLayerId(
+        Drawable tileDrawable = ((TiledDrawable) findDrawableByLayerId(
                 android.R.id.background)).getTileDrawable();
         return (float) tileDrawable.getIntrinsicWidth() / tileDrawable.getIntrinsicHeight();
     }
