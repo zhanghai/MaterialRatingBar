@@ -12,26 +12,29 @@ import android.widget.RatingBar;
 
 public class MaterialRatingBar extends RatingBar {
 
+    private MaterialRatingDrawable mDrawable;
+
     public MaterialRatingBar(Context context) {
         super(context);
 
-        init(null, R.attr.ratingBarStyle);
+        init();
     }
 
     public MaterialRatingBar(Context context, AttributeSet attrs) {
         super(context, attrs);
 
-        init(attrs, R.attr.ratingBarStyle);
+        init();
     }
 
     public MaterialRatingBar(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
-        init(attrs, defStyleAttr);
+        init();
     }
 
-    private void init(AttributeSet attrs, int defStyleAttr) {
-        //setProgressDrawable();
+    private void init() {
+        mDrawable = new MaterialRatingDrawable(getContext());
+        setProgressDrawable(mDrawable);
     }
 
     @Override
@@ -39,8 +42,7 @@ public class MaterialRatingBar extends RatingBar {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 
         int height = getMeasuredHeight();
-        // TODO: Gap.
-        int width = height * getNumStars();
+        int width = Math.round(height * mDrawable.getTileRatio() * getNumStars());
         setMeasuredDimension(ViewCompat.resolveSizeAndState(width, widthMeasureSpec, 0), height);
     }
 }

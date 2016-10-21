@@ -23,38 +23,32 @@
         android:orientation="vertical">
 
         <TextView
-            android:layout_width="match_parent"
+            android:text="@string/framework_implementation"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
 
-        <TextView
-            android:text="@string/native_implementation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
-
         <RatingBar
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:rating="30"
-            style="?android:ratingBarStyle" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
         <TextView
             android:text="@string/library_implementation"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
 
         <me.zhanghai.android.materialratingbar.MaterialRatingBar
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:rating="30" />
+            android:minHeight="36dp"
+            android:maxHeight="36dp" />
 
         <TextView
             android:text="@string/library_implementation_tinted"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
 
         <!--<me.zhanghai.android.materialratingbar.MaterialRatingBar-->
             <!--android:layout_width="match_parent"-->
@@ -63,5 +57,30 @@
             <!--app:mpb_progressTint="@color/tint"-->
             <!--app:mpb_secondaryProgressTint="@color/tint"-->
             <!--app:mpb_progressBackgroundTint="@color/tint" />-->
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="?dialogPreferredPadding"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/todo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="想看" />
+
+            <RadioButton
+                android:id="@+id/doing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="在看" />
+
+            <RadioButton
+                android:id="@+id/done"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="看过" />
+        </RadioGroup>
     </LinearLayout>
 </ScrollView>
