@@ -2,11 +2,11 @@
 
 ![Icon](sample/src/main/launcher_icon-web.png)
 
-Material Design `RatingBar` with better appearance, compatible with Android 2.3+.
+Material Design `RatingBar` with better appearance, compatible with Android 3.0+.
 
 ## Why MaterialRatingBar?
 
-- Consistent appearance on Android 2.3+.
+- Consistent appearance on Android 3.0+.
 - Correct tinting across platforms.
 - Get the 2dp star border background as in Material Icons and Google apps.
 - Able to render correctly when `layout_width` is set to `match_parent`, as in Google Play Store.
