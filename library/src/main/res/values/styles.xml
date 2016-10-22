@@ -14,13 +14,17 @@
         <item name="android:maxHeight">36dp</item>
     </style>
 
+    <style name="Widget.MaterialRatingBar.RatingBar.Small">
+        <item name="android:minHeight">16dp</item>
+        <item name="android:maxHeight">16dp</item>
+    </style>
+
     <style name="Widget.MaterialRatingBar.RatingBar.Indicator">
         <item name="android:isIndicator">true</item>
     </style>
 
-    <style name="Widget.MaterialRatingBar.RatingBar.Small">
+    <style name="Widget.MaterialRatingBar.RatingBar.Indicator.Small">
         <item name="android:minHeight">16dp</item>
         <item name="android:maxHeight">16dp</item>
-        <item name="android:isIndicator">true</item>
     </style>
 </resources>
