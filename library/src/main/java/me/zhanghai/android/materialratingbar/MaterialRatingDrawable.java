@@ -60,6 +60,7 @@ public class MaterialRatingDrawable extends LayerDrawable {
         getTileDrawableByLayerId(android.R.id.progress).setTileCount(count);
     }
 
+    @SuppressLint("NewApi")
     private TileDrawable getTileDrawableByLayerId(int id) {
         Drawable layerDrawable = findDrawableByLayerId(id);
         switch (id) {
