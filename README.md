@@ -60,11 +60,19 @@ And as for the Google Play Store and Google I/O app, they are both using the sta
 
 ![Google Play Store](screenshot/google_play_store.jpg) ![Google I/O](screenshot/google_io.jpg)
 
+With Google's design practice and aesthetic considerations taken into account, I decided to use the star border style.
+
 ### Star size
 
 Google Play Store has stars of optical size 24dp, while Google I/O app and framework `Widget.Material.RatingBar.Indicator` have stars of size 36dp (which are of optical size 30dp).
 
 Also considering that the Material Icons site gives me 24dp (optical 20dp) and 36dp (optical 30dp), I decided to stick to the 36dp approach which is also visually pleasant.
+
+### Star border width
+
+The ring for radio button in Material Design has a width of 2dp, and with experiments on other border widths, I decided to adopt the 2dp border width.
+
+The star border icon is drawn with the help of Inkscape, by downloading the star icon SVG from Material Icons, duplicating the outer border path of the star, setting a stroke of 4dp, running stroke to path on it, extracting the inner border path, and finally merging this path and the original border path.
 
 ### Wide layout
 
