@@ -11,6 +11,8 @@ Material Design `RatingBar` with better appearance, compatible with Android 2.3+
 - Get the 2dp star border background as in Material Icons and Google apps.
 - Able to render correctly when `layout_width` is set to `match_parent`, as in Google Play Store.
 - Able to scale correctly when `layout_height` is set to values other than 16dp, 36dp and 48dp.
+- Able to display ratings such as `4.3` correctly, which will be filled to `4.5` by framework's incorrect implementation.
+- Avoid framework's sunken half star visual glitch.
 - Used as a drop-in replacement for framework `RatingBar`.
 
 ## Preview
@@ -42,7 +44,7 @@ For example, to create a normal `MaterialRatingBar`:
 
 In order to make your `RatingBar` take the correct and consistent size on all versions, you will always need to use one of the styles from this library. The trick inside it is `android:minHeight` and `android:maxHeight` that controls the drawable height.
 
-You can checkout more style variants are in [styles.xml](library/src/main/res/values/styles.xml)
+You can checkout more small or indicator variants in [styles.xml](library/src/main/res/values/styles.xml)
 
 8 tint-related attributes such as `android:mrb_progressTint` and `app:mrb_progressTintMode` are also supported so that they can control the tinting of rating drawables. The default tint color is `?colorControlActivated`, and the default tint mode is `src_in`.
 
