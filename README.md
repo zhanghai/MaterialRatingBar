@@ -8,7 +8,7 @@ Material Design `RatingBar` with consistent appearance on Android 2.3+.
 
 - Consistent appearance on Android 2.3+.
 - Correct tinting across platforms.
-- Get the 2dp star border background as in Material Icons.
+- Get the 2dp star border background as in Material Icons and Google apps.
 - Able to render correctly when `layout_width` is set to `match_parent`, as in Google Play Store.
 - Able to scale correctly when `layout_height` is set to values other than 16dp, 36dp and 48dp.
 - Used as a drop-in replacement for framework `RatingBar`.
@@ -50,7 +50,7 @@ For a detailed example, you can refer to the [sample app's layout](//github.com/
 
 ## Design
 
-Filled star or star border:
+### Filled star or star border
 
 The framework's `RatingBar` uses filling stars with grey color as track, however as per the Material Icons site, star border icons are given.
 
@@ -60,17 +60,17 @@ And as for the Google Play Store and Google I/O app, they are both using the sta
 
 ![Google Play Store](screenshot/google_play_store.jpg) ![Google I/O](screenshot/google_io.jpg)
 
-Star size:
+### Star size
 
 Google Play Store has stars of optical size 24dp, while Google I/O app and framework `Widget.Material.RatingBar.Indicator` have stars of size 36dp (which are of optical size 30dp).
 
 Also considering that the Material Icons site gives me 24dp (optical 20dp) and 36dp (optical 30dp), I decided to stick to the 36dp approach which is also visually pleasant.
 
-Wide layout:
+### Wide layout
 
 Framework `RatingBar` gives erroneous rendering for `RatingBar` with `layout_width` set to `match_parent` by tiling the stars without gap. Since Google Play Store employed the wide design, I implemented it inside this library so that `match_parent` will work properly for `MaterialRatingBar`.
 
-Touch tracking:
+### Touch tracking
 
 Google Play Store and Google I/O app both used an implementation other than `RatingBar`, which means dragging on the bar across stars won't work (it is the functionality of `SeekBar`). I think this is a handy way of interaction for users, and it enables the setting of 0 star which can be useful if you want to enable users to reset their rating to unrated.
 
