@@ -2,7 +2,7 @@
 
 ![Icon](sample/src/main/launcher_icon-web.png)
 
-Material Design `RatingBar` with consistent appearance on Android 2.3+.
+Material Design `RatingBar` with better appearance, compatible with Android 2.3+.
 
 ## Why MaterialRatingBar?
 
