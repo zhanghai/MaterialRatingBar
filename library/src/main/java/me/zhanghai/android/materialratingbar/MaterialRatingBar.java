@@ -29,6 +29,9 @@ public class MaterialRatingBar extends RatingBar {
 
     private MaterialRatingDrawable mDrawable;
 
+    private OnRatingChangeListener mOnRatingChangeListener;
+    private float mLastKnownRating;
+
     public MaterialRatingBar(Context context) {
         super(context);
 
@@ -424,6 +427,57 @@ public class MaterialRatingBar extends RatingBar {
                 drawable.setState(getDrawableState());
             }
         }
+    }
+
+    /**
+     * Get the listener that is listening for rating change events.
+     *
+     * @return The listener, may be null.
+     */
+    public OnRatingChangeListener getOnRatingChangeListener() {
+        return mOnRatingChangeListener;
+    }
+
+    /**
+     * Sets the listener to be called when the rating changes.
+     *
+     * @param listener The listener.
+     */
+    public void setOnRatingChangeListener(OnRatingChangeListener listener) {
+        mOnRatingChangeListener = listener;
+    }
+
+    @Override
+    public synchronized void setSecondaryProgress(int secondaryProgress) {
+        super.setSecondaryProgress(secondaryProgress);
+
+        // HACK: Check and call our listener here because this method is always called by
+        // updateSecondaryProgress() from onProgressRefresh().
+        float rating = getRating();
+        if (mOnRatingChangeListener != null && rating != mLastKnownRating) {
+            mOnRatingChangeListener.onRatingChanged(this, rating);
+        }
+        mLastKnownRating = rating;
+    }
+
+    /**
+     * A callback that notifies clients when the rating has been changed. This includes changes that
+     * were initiated by the user through a touch gesture or arrow key/trackball as well as changes
+     * that were initiated programmatically. This callback <strong>will</strong> be called
+     * continuously while the user is dragging, different from framework's
+     * {@link OnRatingBarChangeListener}.
+     */
+    public interface OnRatingChangeListener {
+
+        /**
+         * Notification that the rating has changed. This <strong>will</strong> be called
+         * continuously while the user is dragging, different from framework's
+         * {@link OnRatingBarChangeListener}.
+         *
+         * @param ratingBar The RatingBar whose rating has changed.
+         * @param rating The current rating. This will be in the range 0..numStars.
+         */
+        void onRatingChanged(RatingBar ratingBar, float rating);
     }
 
     private static class TintInfo {
