@@ -95,7 +95,18 @@ public class MaterialRatingBar extends RatingBar {
         a.recycle();
 
         mDrawable = new MaterialRatingDrawable(getContext());
+        mDrawable.setStarCount(getNumStars());
         setProgressDrawable(mDrawable);
+    }
+
+    @Override
+    public void setNumStars(int numStars) {
+        super.setNumStars(numStars);
+
+        // mDrawable can be null during super class initialization.
+        if (mDrawable != null) {
+            mDrawable.setStarCount(numStars);
+        }
     }
 
     @Override

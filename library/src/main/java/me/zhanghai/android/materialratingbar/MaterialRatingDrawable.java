@@ -7,12 +7,12 @@ package me.zhanghai.android.materialratingbar;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.graphics.drawable.ClipDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
 import android.support.v7.content.res.AppCompatResources;
 import android.view.Gravity;
 
+import me.zhanghai.android.materialratingbar.internal.ClipDrawableCompat;
 import me.zhanghai.android.materialratingbar.internal.ThemeUtils;
 
 public class MaterialRatingDrawable extends LayerDrawable {
@@ -34,7 +34,7 @@ public class MaterialRatingDrawable extends LayerDrawable {
                                                 Context context) {
         int tintColor = ThemeUtils.getColorFromAttrRes(tintAsActivatedElseNormal ?
                 R.attr.colorControlActivated : R.attr.colorControlNormal, context);
-        TiledDrawable drawable = new TiledDrawable(AppCompatResources.getDrawable(context,
+        TileDrawable drawable = new TileDrawable(AppCompatResources.getDrawable(context,
                 tileResId));
         //noinspection RedundantCast
         ((TintableDrawable) drawable).setTint(tintColor);
@@ -45,15 +45,34 @@ public class MaterialRatingDrawable extends LayerDrawable {
     private static Drawable createClippedLayerDrawable(int tileResId,
                                                        boolean tintAsActivatedElseNormal,
                                                        Context context) {
-        return new ClipDrawable(createLayerDrawable(tileResId, tintAsActivatedElseNormal, context),
-                Gravity.LEFT, ClipDrawable.HORIZONTAL);
+        return new ClipDrawableCompat(createLayerDrawable(tileResId, tintAsActivatedElseNormal,
+                context), Gravity.LEFT, ClipDrawableCompat.HORIZONTAL);
     }
 
     public float getTileRatio() {
-        // Cannot get wrapped drawable out of ClipDrawable until API 23, so we take the equivalent
-        // from the android.R.id.background drawable.
-        Drawable tileDrawable = ((TiledDrawable) findDrawableByLayerId(
-                android.R.id.background)).getTileDrawable();
-        return (float) tileDrawable.getIntrinsicWidth() / tileDrawable.getIntrinsicHeight();
+        Drawable drawable = getTileDrawableByLayerId(android.R.id.progress).getDrawable();
+        return (float) drawable.getIntrinsicWidth() / drawable.getIntrinsicHeight();
+    }
+
+    public void setStarCount(int count) {
+        getTileDrawableByLayerId(android.R.id.background).setTileCount(count);
+        getTileDrawableByLayerId(android.R.id.secondaryProgress).setTileCount(count);
+        getTileDrawableByLayerId(android.R.id.progress).setTileCount(count);
+    }
+
+    private TileDrawable getTileDrawableByLayerId(int id) {
+        Drawable layerDrawable = findDrawableByLayerId(id);
+        switch (id) {
+            case android.R.id.background:
+                return (TileDrawable) layerDrawable;
+            case android.R.id.secondaryProgress:
+            case android.R.id.progress: {
+                ClipDrawableCompat clipDrawable = (ClipDrawableCompat) layerDrawable;
+                return (TileDrawable) clipDrawable.getDrawable();
+            }
+            default:
+                // Should never reach here.
+                throw new RuntimeException();
+        }
     }
 }
