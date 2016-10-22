@@ -64,9 +64,9 @@ With Google's design practice and aesthetic considerations taken into account, I
 
 ### Star size
 
-Google Play Store has stars of optical size 24dp, while Google I/O app and framework `Widget.Material.RatingBar.Indicator` have stars of size 36dp (which are of optical size 30dp).
+Google Play Store has stars of optical size 24dp, while Google I/O app and framework `Widget.Material.RatingBar.Indicator` have stars of size 36dp (which are of optical size 30dp). (The framework's default size of 64dp is ridiculously large and thus not taken into consideration.)
 
-Also considering that the Material Icons site gives me 24dp (optical 20dp) and 36dp (optical 30dp), I decided to stick to the 36dp approach which is also visually pleasant.
+Also noticing that the Material Icons site gives icons of 24dp (optical 20dp) and 36dp (optical 30dp), I decided to stick to the 36dp approach which is also visually pleasant.
 
 ### Star border width
 
