@@ -25,7 +25,7 @@ public class ClipDrawableCompat extends ClipDrawable {
     @Nullable
     @Override
     public Drawable getDrawable() {
-        return super.getDrawable();
+        return mDrawable;
     }
 
     // Workaround LayerDrawable.ChildDrawable which calls getConstantState().newDrawable()
