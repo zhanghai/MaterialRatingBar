@@ -7,9 +7,11 @@ package me.zhanghai.android.materialratingbar;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.graphics.drawable.ClipDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
+import android.support.v4.graphics.ColorUtils;
 import android.support.v7.content.res.AppCompatResources;
 import android.view.Gravity;
 
@@ -32,12 +34,23 @@ public class MaterialRatingDrawable extends LayerDrawable {
 
     private static Drawable createLayerDrawable(int tileResId, boolean tintAsActivatedElseNormal,
                                                 Context context) {
-        int tintColor = ThemeUtils.getColorFromAttrRes(tintAsActivatedElseNormal ?
-                R.attr.colorControlActivated : R.attr.colorControlNormal, context);
         TiledDrawable drawable = new TiledDrawable(AppCompatResources.getDrawable(context,
                 tileResId));
+        int tintColor = ThemeUtils.getColorFromAttrRes(tintAsActivatedElseNormal ?
+                R.attr.colorControlActivated : R.attr.colorControlNormal, context);
+        int highlightColor = ThemeUtils.getColorFromAttrRes(R.attr.colorControlHighlight, context);
+        int highlightedTintColor = ColorUtils.compositeColors(highlightColor, tintColor);
+        ColorStateList tintList = new ColorStateList(new int[][] {
+                new int[] { android.R.attr.state_focused },
+                new int[] { android.R.attr.state_pressed },
+                new int[] {}
+        }, new int[] {
+                highlightedTintColor,
+                highlightedTintColor,
+                tintColor
+        });
         //noinspection RedundantCast
-        ((TintableDrawable) drawable).setTint(tintColor);
+        ((TintableDrawable) drawable).setTintList(tintList);
         return drawable;
     }
 
