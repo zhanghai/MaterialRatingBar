@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-  ~ Copyright (c) 2015 Zhang Hai <Dreaming.in.Code.ZH@Gmail.com>
+  ~ Copyright (c) 2016 Zhang Hai <Dreaming.in.Code.ZH@Gmail.com>
   ~ All Rights Reserved.
   -->
 
@@ -29,58 +29,47 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
 
         <RatingBar
+            android:id="@+id/framework_ratingbar"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:maxHeight="48dp"
+            android:layout_marginLeft="-4dp"
+            android:layout_marginRight="-4dp"
+            android:rating="2.5" />
 
         <TextView
             android:text="@string/library_implementation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
 
         <me.zhanghai.android.materialratingbar.MaterialRatingBar
+            android:id="@+id/library_ratingbar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:minHeight="36dp"
-            android:maxHeight="36dp" />
+            android:layout_marginLeft="-3dp"
+            android:layout_marginRight="-3dp"
+            android:rating="2.5"
+            style="@style/Widget.MaterialRatingBar.RatingBar" />
 
         <TextView
             android:text="@string/library_implementation_tinted"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
 
-        <!--<me.zhanghai.android.materialratingbar.MaterialRatingBar-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:rating="30"-->
-            <!--app:mpb_progressTint="@color/tint"-->
-            <!--app:mpb_secondaryProgressTint="@color/tint"-->
-            <!--app:mpb_progressBackgroundTint="@color/tint" />-->
-
-        <RadioGroup
+        <me.zhanghai.android.materialratingbar.MaterialRatingBar
+            android:id="@+id/library_tinted_ratingbar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="?dialogPreferredPadding"
-            android:orientation="horizontal">
-
-            <RadioButton
-                android:id="@+id/todo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="想看" />
-
-            <RadioButton
-                android:id="@+id/doing"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="在看" />
-
-            <RadioButton
-                android:id="@+id/done"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="看过" />
-        </RadioGroup>
+            android:layout_marginLeft="-3dp"
+            android:layout_marginRight="-3dp"
+            android:rating="2.5"
+            app:mrb_progressTint="@color/tint"
+            app:mrb_secondaryProgressTint="@color/tint"
+            style="@style/Widget.MaterialRatingBar.RatingBar" />
     </LinearLayout>
 </ScrollView>
