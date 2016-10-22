@@ -74,13 +74,13 @@ Also noticing that the Material Icons site gives icons of 24dp (optical 20dp) an
 
 The ring for radio button in Material Design has a width of 2dp, and with experiments on other border widths, I decided to adopt the 2dp border width.
 
-The star border icon is drawn with the help of Inkscape, by downloading the star icon SVG from Material Icons, duplicating the outer border path of the star, setting a stroke of 4dp, running stroke to path on it, extracting the inner border path, and finally merging this path and the original border path.
+The star border icon is drawn with the help of Inkscape, by downloading the star icon SVG from Material Icons, duplicating the outer border path of the star, setting a stroke of 4dp, running stroke to path on it, extracting the inner border path, and finally combining this path and the original outer border path.
 
 ### Wide layout
 
-Framework `RatingBar` gives erroneous rendering for `RatingBar` with `layout_width` set to `match_parent` by tiling the stars without gap. Since Google Play Store employed the wide design, I implemented it inside this library so that `match_parent` will work properly for `MaterialRatingBar`.
+Framework `RatingBar` gives erroneous rendering for `RatingBar` when `layout_width` is set to `match_parent` by tiling the stars without any gap. Since Google Play Store employed the wide design, I implemented it inside this library as well, so that `match_parent` will work properly for `MaterialRatingBar`.
 
-### Touch tracking
+### Dragging
 
 Google Play Store and Google I/O app both used an implementation other than `RatingBar`, which means dragging on the bar across stars won't work (it is the functionality of `SeekBar`). I think this is a handy way of interaction for users, and it enables the setting of 0 star which can be useful if you want to enable users to reset their rating to unrated.
 
