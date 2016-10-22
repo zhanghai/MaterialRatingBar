@@ -11,7 +11,7 @@
 
     <string name="normal_layout">Normal Layout</string>
     <string name="wide_layout">Wide Layout</string>
-    <string name="decimal_step_size">Decimal step size</string>
+    <string name="decimal_step_size">Decimal Step Size</string>
     <string name="framework_implementation">Framework Implementation</string>
     <string name="library_implementation">Library Implementation</string>
     <string name="library_implementation_tinted">Library Implementation (Tinted)</string>
