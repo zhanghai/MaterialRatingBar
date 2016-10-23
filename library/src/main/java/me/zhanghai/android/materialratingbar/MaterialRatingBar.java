@@ -477,7 +477,7 @@ public class MaterialRatingBar extends RatingBar {
          * @param ratingBar The RatingBar whose rating has changed.
          * @param rating The current rating. This will be in the range 0..numStars.
          */
-        void onRatingChanged(RatingBar ratingBar, float rating);
+        void onRatingChanged(MaterialRatingBar ratingBar, float rating);
     }
 
     private static class TintInfo {
