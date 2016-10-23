@@ -48,6 +48,8 @@ You can checkout more small or indicator variants in [styles.xml](library/src/ma
 
 8 tint-related attributes such as `android:mrb_progressTint` and `app:mrb_progressTintMode` are also supported so that they can control the tinting of rating drawables. The default tint color is `?colorControlActivated`, and the default tint mode is `src_in`.
 
+An `OnRatingChangeListener` interface is also added to `MaterialRatingBar`, which enables callback while user is dragging, just as the listener in `SeekBar`.
+
 For a detailed example, you can refer to the [sample app's layout](//github.com/DreaminginCodeZH/MaterialRatingBar/blob/master/sample/src/main/res/layout/main_activity.xml), where you can find examples such as tinting and wide layout.
 
 ## Design
