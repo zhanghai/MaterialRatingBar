@@ -12,7 +12,6 @@ import android.graphics.drawable.LayerDrawable;
 import android.support.v7.content.res.AppCompatResources;
 import android.view.Gravity;
 
-import me.zhanghai.android.materialratingbar.internal.ClipDrawableCompat;
 import me.zhanghai.android.materialratingbar.internal.ThemeUtils;
 
 public class MaterialRatingDrawable extends LayerDrawable {

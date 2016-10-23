@@ -21,9 +21,9 @@ import android.widget.RatingBar;
 
 import me.zhanghai.android.materialratingbar.internal.DrawableCompat;
 
-import static android.content.ContentValues.TAG;
-
 public class MaterialRatingBar extends RatingBar {
+
+    private static final String TAG = MaterialRatingBar.class.getSimpleName();
 
     private TintInfo mProgressTintInfo = new TintInfo();
 
