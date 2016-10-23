@@ -19,14 +19,14 @@ Material Design `RatingBar` with better appearance, compatible with Android 3.0+
 
 ![Sample app](screenshot/sample_app.jpg)
 
-[Sample APK](//github.com/DreaminginCodeZH/MaterialRatingBar/releases/download/v1.0.1/sample-release.apk)
+[Sample APK](//github.com/DreaminginCodeZH/MaterialRatingBar/releases/download/v1.0.2/sample-release.apk)
 
 ## Integration
 
 Gradle:
 
 ```gradle
-compile 'me.zhanghai.android.materialratingbar:library:1.0.1'
+compile 'me.zhanghai.android.materialratingbar:library:1.0.2'
 ```
 
 ## Usage
