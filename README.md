@@ -7,8 +7,9 @@ Material Design `RatingBar` with better appearance, compatible with Android 3.0+
 ## Why MaterialRatingBar?
 
 - Consistent appearance on Android 3.0+.
-- Correct tinting across platforms.
+- Extends framework `RatingBar`.
 - Get the 2dp star border background as in Material Icons and Google apps.
+- Correct custom tinting across platforms.
 - Able to render correctly when `layout_width` is set to `match_parent`, as in Google Play Store.
 - Able to scale correctly when `layout_height` is set to values other than 16dp, 36dp and 48dp.
 - Able to display ratings such as `4.3` correctly, which will be filled to `4.5` by framework's incorrect implementation.
