@@ -47,7 +47,7 @@ In order to make your `RatingBar` take the correct and consistent size on all ve
 
 You can checkout more small or indicator variants in [styles.xml](library/src/main/res/values/styles.xml)
 
-8 tint-related attributes such as `android:mrb_progressTint` and `app:mrb_progressTintMode` are also supported so that they can control the tinting of rating drawables. The default tint color is `?colorControlActivated`, and the default tint mode is `src_in`.
+8 tint-related attributes such as `app:mrb_progressTint` and `app:mrb_progressTintMode` are also supported so that they can control the tinting of rating drawables. The default tint color is `?colorControlActivated`, and the default tint mode is `src_in`.
 
 An `OnRatingChangeListener` interface is also added to `MaterialRatingBar`, which enables callback while user is dragging, just as the listener in `SeekBar`.
 
