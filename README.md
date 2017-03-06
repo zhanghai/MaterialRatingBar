@@ -18,9 +18,11 @@ Material Design `RatingBar` with better appearance, compatible with Android 3.0+
 
 ## Preview
 
-![Sample app](screenshot/sample_app.jpg)
+<a href="https://play.google.com/store/apps/details?id=me.zhanghai.android.materialratingbar.sample" target="_blank"><img alt="Google Play" height="90" src="https://play.google.com/intl/en_US/badges/images/generic/en_badge_web_generic.png"/></a>
 
 [Sample APK](//github.com/DreaminginCodeZH/MaterialRatingBar/releases/download/v1.0.2/sample-release.apk)
+
+![Sample app](screenshot/sample_app.jpg)
 
 ## Integration
 
