@@ -47,7 +47,7 @@ For example, to create a normal `MaterialRatingBar`:
 
 In order to make your `RatingBar` take the correct and consistent size on all versions, you will always need to use one of the styles from this library. The trick inside it is `android:minHeight` and `android:maxHeight` that controls the drawable height.
 
-You can checkout more small or indicator variants in [styles.xml](library/src/main/res/values/styles.xml)
+You can checkout more small or indicator variants in [styles.xml](library/src/main/res/values/styles.xml).
 
 8 tint-related attributes such as `app:mrb_progressTint` and `app:mrb_progressTintMode` are also supported so that they can control the tinting of rating drawables. The default tint color is `?colorControlActivated`, and the default tint mode is `src_in`.
 
