@@ -49,6 +49,8 @@ In order to make your `RatingBar` take the correct and consistent size on all ve
 
 You can checkout more small or indicator variants in [styles.xml](library/src/main/res/values/styles.xml).
 
+You can use `app:mrb_fillBackgroundStars` to control whether background stars are filled, otherwise it defaults to the same value as `android:isIndicator` which is the behavior of Google apps.
+
 8 tint-related attributes such as `app:mrb_progressTint` and `app:mrb_progressTintMode` are also supported so that they can control the tinting of rating drawables. The default tint color is `?colorControlActivated`, and the default tint mode is `src_in`.
 
 An `OnRatingChangeListener` interface is also added to `MaterialRatingBar`, which enables callback while user is dragging, just as the listener in `SeekBar`.

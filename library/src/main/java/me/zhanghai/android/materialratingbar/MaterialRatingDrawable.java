@@ -16,11 +16,12 @@ import me.zhanghai.android.materialratingbar.internal.ThemeUtils;
 
 public class MaterialRatingDrawable extends LayerDrawable {
 
-    public MaterialRatingDrawable(Context context) {
+    public MaterialRatingDrawable(Context context, boolean fillBackgroundStars) {
         super(new Drawable[] {
-                createLayerDrawable(R.drawable.mrb_star_border_icon_black_36dp, false, context),
-                createClippedLayerDrawable(R.drawable.mrb_star_border_icon_black_36dp, true,
-                        context),
+                createLayerDrawable(fillBackgroundStars ? R.drawable.mrb_star_icon_black_36dp
+                        : R.drawable.mrb_star_border_icon_black_36dp, false, context),
+                createClippedLayerDrawable(fillBackgroundStars ? R.drawable.mrb_star_icon_black_36dp
+                                : R.drawable.mrb_star_border_icon_black_36dp, true, context),
                 createClippedLayerDrawable(R.drawable.mrb_star_icon_black_36dp, true, context)
         });
 

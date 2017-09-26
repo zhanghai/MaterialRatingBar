@@ -43,5 +43,6 @@
             <enum name="screen" value="15" />
             <enum name="add" value="16" />
         </attr>
+        <attr name="mrb_fillBackgroundStars" format="boolean" />
     </declare-styleable>
 </resources>

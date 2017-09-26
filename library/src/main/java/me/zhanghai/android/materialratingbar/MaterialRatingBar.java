@@ -98,9 +98,11 @@ public class MaterialRatingBar extends RatingBar {
                     R.styleable.MaterialRatingBar_mrb_indeterminateTintMode, -1), null);
             mProgressTintInfo.mHasIndeterminateTintMode = true;
         }
+        boolean fillBackgroundStars = a.getBoolean(
+                R.styleable.MaterialRatingBar_mrb_fillBackgroundStars, isIndicator());
         a.recycle();
 
-        mDrawable = new MaterialRatingDrawable(getContext());
+        mDrawable = new MaterialRatingDrawable(getContext(), fillBackgroundStars);
         mDrawable.setStarCount(getNumStars());
         setProgressDrawable(mDrawable);
     }
