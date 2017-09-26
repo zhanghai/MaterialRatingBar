@@ -7,6 +7,8 @@ package me.zhanghai.android.materialratingbar;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
 import android.support.v7.content.res.AppCompatResources;
@@ -20,8 +22,8 @@ public class MaterialRatingDrawable extends LayerDrawable {
         super(new Drawable[] {
                 createLayerDrawable(fillBackgroundStars ? R.drawable.mrb_star_icon_black_36dp
                         : R.drawable.mrb_star_border_icon_black_36dp, false, context),
-                createClippedLayerDrawable(fillBackgroundStars ? R.drawable.mrb_star_icon_black_36dp
-                                : R.drawable.mrb_star_border_icon_black_36dp, true, context),
+                fillBackgroundStars ? createTransparentDrawable() : createClippedLayerDrawable(
+                        R.drawable.mrb_star_border_icon_black_36dp, true, context),
                 createClippedLayerDrawable(R.drawable.mrb_star_icon_black_36dp, true, context)
         });
 
@@ -47,6 +49,12 @@ public class MaterialRatingDrawable extends LayerDrawable {
                                                        Context context) {
         return new ClipDrawableCompat(createLayerDrawable(tileResId, tintAsActivatedElseNormal,
                 context), Gravity.LEFT, ClipDrawableCompat.HORIZONTAL);
+    }
+
+    @SuppressLint("RtlHardcoded")
+    private static Drawable createTransparentDrawable() {
+        return new ClipDrawableCompat(new TileDrawable(new ColorDrawable(Color.TRANSPARENT)),
+                Gravity.LEFT, ClipDrawableCompat.HORIZONTAL);
     }
 
     public float getTileRatio() {
