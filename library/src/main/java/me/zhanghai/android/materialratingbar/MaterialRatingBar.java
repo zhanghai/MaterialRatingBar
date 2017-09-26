@@ -13,14 +13,16 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
 import android.os.Build;
 import android.support.annotation.Nullable;
-import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.TintTypedArray;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.view.View;
 import android.widget.RatingBar;
 
 import me.zhanghai.android.materialratingbar.internal.DrawableCompat;
 
+// AppCompatRatingBar will add undesired measuring behavior.
+@SuppressLint("AppCompatCustomView")
 public class MaterialRatingBar extends RatingBar {
 
     private static final String TAG = MaterialRatingBar.class.getSimpleName();
@@ -50,6 +52,7 @@ public class MaterialRatingBar extends RatingBar {
         init(attrs, defStyleAttr);
     }
 
+    @SuppressWarnings("RestrictedApi")
     private void init(AttributeSet attrs, int defStyleAttr) {
 
         Context context = getContext();
@@ -118,7 +121,7 @@ public class MaterialRatingBar extends RatingBar {
 
         int height = getMeasuredHeight();
         int width = Math.round(height * mDrawable.getTileRatio() * getNumStars());
-        setMeasuredDimension(ViewCompat.resolveSizeAndState(width, widthMeasureSpec, 0), height);
+        setMeasuredDimension(View.resolveSizeAndState(width, widthMeasureSpec, 0), height);
     }
 
     @Override
