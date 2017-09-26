@@ -21,10 +21,13 @@ public class MaterialRatingDrawable extends LayerDrawable {
     public MaterialRatingDrawable(Context context, boolean fillBackgroundStars) {
         super(new Drawable[] {
                 createLayerDrawable(fillBackgroundStars ? R.drawable.mrb_star_icon_black_36dp
-                        : R.drawable.mrb_star_border_icon_black_36dp, false, context),
-                fillBackgroundStars ? createTransparentDrawable() : createClippedLayerDrawable(
-                        R.drawable.mrb_star_border_icon_black_36dp, true, context),
-                createClippedLayerDrawable(R.drawable.mrb_star_icon_black_36dp, true, context)
+                        : R.drawable.mrb_star_border_icon_black_36dp, fillBackgroundStars ?
+                        R.attr.colorControlHighlight : R.attr.colorControlNormal, context),
+                fillBackgroundStars ? createClippedTransparentLayerDrawable()
+                        : createClippedLayerDrawable(R.drawable.mrb_star_border_icon_black_36dp,
+                        R.attr.colorControlActivated, context),
+                createClippedLayerDrawable(R.drawable.mrb_star_icon_black_36dp,
+                        R.attr.colorControlActivated, context)
         });
 
         setId(0, android.R.id.background);
@@ -32,27 +35,25 @@ public class MaterialRatingDrawable extends LayerDrawable {
         setId(2, android.R.id.progress);
     }
 
-    private static Drawable createLayerDrawable(int tileResId, boolean tintAsActivatedElseNormal,
-                                                Context context) {
-        int tintColor = ThemeUtils.getColorFromAttrRes(tintAsActivatedElseNormal ?
-                R.attr.colorControlActivated : R.attr.colorControlNormal, context);
+    private static Drawable createLayerDrawable(int tileRes, int tintAttrRes, Context context) {
+        int tintColor = ThemeUtils.getColorFromAttrRes(tintAttrRes, context);
         TileDrawable drawable = new TileDrawable(AppCompatResources.getDrawable(context,
-                tileResId));
+                tileRes));
+        drawable.mutate();
         //noinspection RedundantCast
         ((TintableDrawable) drawable).setTint(tintColor);
         return drawable;
     }
 
     @SuppressLint("RtlHardcoded")
-    private static Drawable createClippedLayerDrawable(int tileResId,
-                                                       boolean tintAsActivatedElseNormal,
+    private static Drawable createClippedLayerDrawable(int tileResId, int tintAttrRes,
                                                        Context context) {
-        return new ClipDrawableCompat(createLayerDrawable(tileResId, tintAsActivatedElseNormal,
-                context), Gravity.LEFT, ClipDrawableCompat.HORIZONTAL);
+        return new ClipDrawableCompat(createLayerDrawable(tileResId, tintAttrRes, context),
+                Gravity.LEFT, ClipDrawableCompat.HORIZONTAL);
     }
 
     @SuppressLint("RtlHardcoded")
-    private static Drawable createTransparentDrawable() {
+    private static Drawable createClippedTransparentLayerDrawable() {
         return new ClipDrawableCompat(new TileDrawable(new ColorDrawable(Color.TRANSPARENT)),
                 Gravity.LEFT, ClipDrawableCompat.HORIZONTAL);
     }
