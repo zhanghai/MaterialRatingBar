@@ -39,7 +39,8 @@ class ClipDrawableCompat extends ClipDrawable implements TintableDrawable {
             //noinspection RedundantCast
             ((TintableDrawable) mDrawable).setTint(tintColor);
         } else {
-            Log.w(TAG, "Drawable did not implement TintableDrawable, it won't be tinted below Lollipop");
+            Log.w(TAG, "Drawable did not implement TintableDrawable, it won't be tinted below" +
+                    " Lollipop");
             super.setTint(tintColor);
         }
     }
@@ -50,7 +51,8 @@ class ClipDrawableCompat extends ClipDrawable implements TintableDrawable {
             //noinspection RedundantCast
             ((TintableDrawable) mDrawable).setTintList(tint);
         } else {
-            Log.w(TAG, "Drawable did not implement TintableDrawable, it won't be tinted below Lollipop");
+            Log.w(TAG, "Drawable did not implement TintableDrawable, it won't be tinted below" +
+                    " Lollipop");
             super.setTintList(tint);
         }
     }
@@ -61,7 +63,8 @@ class ClipDrawableCompat extends ClipDrawable implements TintableDrawable {
             //noinspection RedundantCast
             ((TintableDrawable) mDrawable).setTintMode(tintMode);
         } else {
-            Log.w(TAG, "Drawable did not implement TintableDrawable, it won't be tinted below Lollipop");
+            Log.w(TAG, "Drawable did not implement TintableDrawable, it won't be tinted below" +
+                    " Lollipop");
             super.setTintMode(tintMode);
         }
     }
