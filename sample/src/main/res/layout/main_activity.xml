@@ -176,7 +176,6 @@
             android:layout_height="wrap_content"
             android:stepSize="0.01"
             app:mrb_progressTint="@color/tint"
-            app:mrb_secondaryProgressTint="@color/tint"
             style="@style/Widget.MaterialRatingBar.RatingBar.Indicator" />
     </LinearLayout>
 </ScrollView>
