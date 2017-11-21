@@ -147,19 +147,178 @@ public class MaterialRatingBar extends RatingBar {
     }
 
     /**
-     * {@inheritDoc}
+     * @deprecated Use {@link #getSupportProgressTintList()} instead.
      */
     @Nullable
     @Override
     public ColorStateList getProgressTintList() {
+        logRatingBarTintWarning();
+        return getSupportProgressTintList();
+    }
+
+    /**
+     * @deprecated Use {@link #setSupportProgressTintList(ColorStateList)} instead.
+     */
+    @Override
+    public void setProgressTintList(@Nullable ColorStateList tint) {
+        logRatingBarTintWarning();
+        setSupportProgressTintList(tint);
+    }
+
+    /**
+     * @deprecated Use {@link #getSupportProgressTintMode()} instead.
+     */
+    @Nullable
+    @Override
+    public PorterDuff.Mode getProgressTintMode() {
+        logRatingBarTintWarning();
+        return getSupportProgressTintMode();
+    }
+
+    /**
+     * @deprecated Use {@link #setSupportProgressTintMode(PorterDuff.Mode)} instead.
+     */
+    @Override
+    public void setProgressTintMode(@Nullable PorterDuff.Mode tintMode) {
+        logRatingBarTintWarning();
+        setSupportProgressTintMode(tintMode);
+    }
+
+    /**
+     * @deprecated Use {@link #getSupportSecondaryProgressTintList()} instead.
+     */
+    @Nullable
+    @Override
+    public ColorStateList getSecondaryProgressTintList() {
+        logRatingBarTintWarning();
+        return getSupportSecondaryProgressTintList();
+    }
+
+    /**
+     * @deprecated Use {@link #setSupportSecondaryProgressTintList(ColorStateList)} instead.
+     */
+    @Override
+    public void setSecondaryProgressTintList(@Nullable ColorStateList tint) {
+        logRatingBarTintWarning();
+        setSupportSecondaryProgressTintList(tint);
+    }
+
+    /**
+     * @deprecated Use {@link #getSupportSecondaryProgressTintMode()} instead.
+     */
+    @Nullable
+    @Override
+    public PorterDuff.Mode getSecondaryProgressTintMode() {
+        logRatingBarTintWarning();
+        return getSupportSecondaryProgressTintMode();
+    }
+
+    /**
+     * @deprecated Use {@link #setSupportSecondaryProgressTintMode(PorterDuff.Mode)} instead.
+     */
+    @Override
+    public void setSecondaryProgressTintMode(@Nullable PorterDuff.Mode tintMode) {
+        logRatingBarTintWarning();
+        setSupportSecondaryProgressTintMode(tintMode);
+    }
+
+    /**
+     * @deprecated Use {@link #getSupportProgressBackgroundTintList()} instead.
+     */
+    @Nullable
+    @Override
+    public ColorStateList getProgressBackgroundTintList() {
+        logRatingBarTintWarning();
+        return getSupportProgressBackgroundTintList();
+    }
+
+    /**
+     * @deprecated Use {@link #setSupportProgressBackgroundTintList(ColorStateList)} instead.
+     */
+    @Override
+    public void setProgressBackgroundTintList(@Nullable ColorStateList tint) {
+        logRatingBarTintWarning();
+        setSupportProgressBackgroundTintList(tint);
+    }
+
+    /**
+     * @deprecated Use {@link #getSupportProgressBackgroundTintMode()} instead.
+     */
+    @Nullable
+    @Override
+    public PorterDuff.Mode getProgressBackgroundTintMode() {
+        logRatingBarTintWarning();
+        return getSupportProgressBackgroundTintMode();
+    }
+
+    /**
+     * @deprecated Use {@link #setSupportProgressBackgroundTintMode(PorterDuff.Mode)} instead.
+     */
+    @Override
+    public void setProgressBackgroundTintMode(@Nullable PorterDuff.Mode tintMode) {
+        logRatingBarTintWarning();
+        setSupportProgressBackgroundTintMode(tintMode);
+    }
+
+    /**
+     * @deprecated Use {@link #getSupportIndeterminateTintList()} instead.
+     */
+    @Nullable
+    @Override
+    public ColorStateList getIndeterminateTintList() {
+        logRatingBarTintWarning();
+        return getSupportIndeterminateTintList();
+    }
+
+    /**
+     * @deprecated Use {@link #setSupportIndeterminateTintList(ColorStateList)} instead.
+     */
+    @Override
+    public void setIndeterminateTintList(@Nullable ColorStateList tint) {
+        logRatingBarTintWarning();
+        setSupportIndeterminateTintList(tint);
+    }
+
+    /**
+     * @deprecated Use {@link #getSupportIndeterminateTintMode()} instead.
+     */
+    @Nullable
+    @Override
+    public PorterDuff.Mode getIndeterminateTintMode() {
+        logRatingBarTintWarning();
+        return getSupportIndeterminateTintMode();
+    }
+
+    /**
+     * @deprecated Use {@link #setSupportIndeterminateTintMode(PorterDuff.Mode)} instead.
+     */
+    @Override
+    public void setIndeterminateTintMode(@Nullable PorterDuff.Mode tintMode) {
+        logRatingBarTintWarning();
+        setSupportIndeterminateTintMode(tintMode);
+    }
+
+    private void logRatingBarTintWarning() {
+        if (getContext().getApplicationInfo().minSdkVersion >= Build.VERSION_CODES.LOLLIPOP) {
+            return;
+        }
+        Log.w(TAG, "Non-support version of tint method called, this is error-prone and will crash" +
+                " below Lollipop if you are calling it as a method of RatingBar instead of" +
+                " MaterialRatingBar");
+    }
+
+    /**
+     * @see RatingBar#getProgressTintList()
+     */
+    @Nullable
+    public ColorStateList getSupportProgressTintList() {
         return mProgressTintInfo.mProgressTintList;
     }
 
     /**
-     * {@inheritDoc}
+     * @see RatingBar#setProgressTintList(ColorStateList)
      */
-    @Override
-    public void setProgressTintList(@Nullable ColorStateList tint) {
+    public void setSupportProgressTintList(@Nullable ColorStateList tint) {
         mProgressTintInfo.mProgressTintList = tint;
         mProgressTintInfo.mHasProgressTintList = true;
 
@@ -167,19 +326,17 @@ public class MaterialRatingBar extends RatingBar {
     }
 
     /**
-     * {@inheritDoc}
+     * @see RatingBar#getProgressTintMode()
      */
     @Nullable
-    @Override
-    public PorterDuff.Mode getProgressTintMode() {
+    public PorterDuff.Mode getSupportProgressTintMode() {
         return mProgressTintInfo.mProgressTintMode;
     }
 
     /**
-     * {@inheritDoc}
+     * @see RatingBar#setProgressTintMode(PorterDuff.Mode)
      */
-    @Override
-    public void setProgressTintMode(@Nullable PorterDuff.Mode tintMode) {
+    public void setSupportProgressTintMode(@Nullable PorterDuff.Mode tintMode) {
         mProgressTintInfo.mProgressTintMode = tintMode;
         mProgressTintInfo.mHasProgressTintMode = true;
 
@@ -187,19 +344,17 @@ public class MaterialRatingBar extends RatingBar {
     }
 
     /**
-     * {@inheritDoc}
+     * @see RatingBar#getSecondaryProgressTintList()
      */
     @Nullable
-    @Override
-    public ColorStateList getSecondaryProgressTintList() {
+    public ColorStateList getSupportSecondaryProgressTintList() {
         return mProgressTintInfo.mSecondaryProgressTintList;
     }
 
     /**
-     * {@inheritDoc}
+     * @see RatingBar#setSecondaryProgressTintList(ColorStateList)
      */
-    @Override
-    public void setSecondaryProgressTintList(@Nullable ColorStateList tint) {
+    public void setSupportSecondaryProgressTintList(@Nullable ColorStateList tint) {
         mProgressTintInfo.mSecondaryProgressTintList = tint;
         mProgressTintInfo.mHasSecondaryProgressTintList = true;
 
@@ -207,19 +362,17 @@ public class MaterialRatingBar extends RatingBar {
     }
 
     /**
-     * {@inheritDoc}
+     * @see RatingBar#getSecondaryProgressTintMode()
      */
     @Nullable
-    @Override
-    public PorterDuff.Mode getSecondaryProgressTintMode() {
+    public PorterDuff.Mode getSupportSecondaryProgressTintMode() {
         return mProgressTintInfo.mSecondaryProgressTintMode;
     }
 
     /**
-     * {@inheritDoc}
+     * @see RatingBar#setSecondaryProgressTintMode(PorterDuff.Mode)
      */
-    @Override
-    public void setSecondaryProgressTintMode(@Nullable PorterDuff.Mode tintMode) {
+    public void setSupportSecondaryProgressTintMode(@Nullable PorterDuff.Mode tintMode) {
         mProgressTintInfo.mSecondaryProgressTintMode = tintMode;
         mProgressTintInfo.mHasSecondaryProgressTintMode = true;
 
@@ -227,19 +380,17 @@ public class MaterialRatingBar extends RatingBar {
     }
 
     /**
-     * {@inheritDoc}
+     * @see RatingBar#getProgressBackgroundTintList()
      */
     @Nullable
-    @Override
-    public ColorStateList getProgressBackgroundTintList() {
+    public ColorStateList getSupportProgressBackgroundTintList() {
         return mProgressTintInfo.mProgressBackgroundTintList;
     }
 
     /**
-     * {@inheritDoc}
+     * @see RatingBar#setProgressBackgroundTintList(ColorStateList)
      */
-    @Override
-    public void setProgressBackgroundTintList(@Nullable ColorStateList tint) {
+    public void setSupportProgressBackgroundTintList(@Nullable ColorStateList tint) {
         mProgressTintInfo.mProgressBackgroundTintList = tint;
         mProgressTintInfo.mHasProgressBackgroundTintList = true;
 
@@ -247,19 +398,17 @@ public class MaterialRatingBar extends RatingBar {
     }
 
     /**
-     * {@inheritDoc}
+     * @see RatingBar#getProgressBackgroundTintMode()
      */
     @Nullable
-    @Override
-    public PorterDuff.Mode getProgressBackgroundTintMode() {
+    public PorterDuff.Mode getSupportProgressBackgroundTintMode() {
         return mProgressTintInfo.mProgressBackgroundTintMode;
     }
 
     /**
-     * {@inheritDoc}
+     * @see RatingBar#setProgressBackgroundTintMode(PorterDuff.Mode)
      */
-    @Override
-    public void setProgressBackgroundTintMode(@Nullable PorterDuff.Mode tintMode) {
+    public void setSupportProgressBackgroundTintMode(@Nullable PorterDuff.Mode tintMode) {
         mProgressTintInfo.mProgressBackgroundTintMode = tintMode;
         mProgressTintInfo.mHasProgressBackgroundTintMode = true;
 
@@ -267,19 +416,17 @@ public class MaterialRatingBar extends RatingBar {
     }
 
     /**
-     * {@inheritDoc}
+     * @see RatingBar#getIndeterminateTintList()
      */
     @Nullable
-    @Override
-    public ColorStateList getIndeterminateTintList() {
+    public ColorStateList getSupportIndeterminateTintList() {
         return mProgressTintInfo.mIndeterminateTintList;
     }
 
     /**
-     * {@inheritDoc}
+     * @see RatingBar#setIndeterminateTintList(ColorStateList)
      */
-    @Override
-    public void setIndeterminateTintList(@Nullable ColorStateList tint) {
+    public void setSupportIndeterminateTintList(@Nullable ColorStateList tint) {
         mProgressTintInfo.mIndeterminateTintList = tint;
         mProgressTintInfo.mHasIndeterminateTintList = true;
 
@@ -287,19 +434,17 @@ public class MaterialRatingBar extends RatingBar {
     }
 
     /**
-     * {@inheritDoc}
+     * @see RatingBar#getIndeterminateTintMode()
      */
     @Nullable
-    @Override
-    public PorterDuff.Mode getIndeterminateTintMode() {
+    public PorterDuff.Mode getSupportIndeterminateTintMode() {
         return mProgressTintInfo.mIndeterminateTintMode;
     }
 
     /**
-     * {@inheritDoc}
+     * @see RatingBar#setIndeterminateTintMode(PorterDuff.Mode)
      */
-    @Override
-    public void setIndeterminateTintMode(@Nullable PorterDuff.Mode tintMode) {
+    public void setSupportIndeterminateTintMode(@Nullable PorterDuff.Mode tintMode) {
         mProgressTintInfo.mIndeterminateTintMode = tintMode;
         mProgressTintInfo.mHasIndeterminateTintMode = true;
 
@@ -407,7 +552,7 @@ public class MaterialRatingBar extends RatingBar {
                     //noinspection RedundantCast
                     ((TintableDrawable) drawable).setTintList(tintList);
                 } else {
-                    Log.w(TAG, "Drawable did not implement TintableDrawable, it won't be tinted below Lollipop");
+                    logDrawableTintWarning();
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                         drawable.setTintList(tintList);
                     }
@@ -419,7 +564,7 @@ public class MaterialRatingBar extends RatingBar {
                     //noinspection RedundantCast
                     ((TintableDrawable) drawable).setTintMode(tintMode);
                 } else {
-                    Log.w(TAG, "Drawable did not implement TintableDrawable, it won't be tinted below Lollipop");
+                    logDrawableTintWarning();
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                         drawable.setTintMode(tintMode);
                     }
@@ -432,6 +577,11 @@ public class MaterialRatingBar extends RatingBar {
                 drawable.setState(getDrawableState());
             }
         }
+    }
+
+    private void logDrawableTintWarning() {
+        Log.w(TAG, "Drawable did not implement TintableDrawable, it won't be tinted below" +
+                " Lollipop");
     }
 
     /**
