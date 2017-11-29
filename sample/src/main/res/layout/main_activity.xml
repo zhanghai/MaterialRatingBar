@@ -78,6 +78,23 @@
             app:mrb_secondaryProgressTint="@color/tint"
             style="@style/Widget.MaterialRatingBar.RatingBar" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/library_implementation_custom"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+
+        <me.zhanghai.android.materialratingbar.MaterialRatingBar
+            android:id="@+id/library_custom_normal_ratingbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-3dp"
+            android:layout_marginRight="-3dp"
+            android:rating="2.5"
+            app:mrb_progressDrawableEnabled="@drawable/ic_pets_black_24dp"
+            app:mrb_progressDrawableDisabled="@drawable/ic_pets_black_24dp"
+            style="@style/Widget.MaterialRatingBar.RatingBar" />
+
         <!-- Wide Layout -->
 
         <TextView
@@ -126,6 +143,21 @@
             android:rating="2.5"
             app:mrb_progressTint="@color/tint"
             app:mrb_secondaryProgressTint="@color/tint"
+            style="@style/Widget.MaterialRatingBar.RatingBar" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/library_implementation_custom"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+
+        <me.zhanghai.android.materialratingbar.MaterialRatingBar
+            android:id="@+id/library_custom_wide_ratingbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:rating="2.5"
+            app:mrb_progressDrawableEnabled="@drawable/ic_pets_black_24dp"
+            app:mrb_progressDrawableDisabled="@drawable/ic_pets_black_24dp"
             style="@style/Widget.MaterialRatingBar.RatingBar" />
 
         <!-- Decimal step size -->
@@ -177,5 +209,21 @@
             android:stepSize="0.01"
             app:mrb_progressTint="@color/tint"
             style="@style/Widget.MaterialRatingBar.RatingBar.Indicator" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/library_implementation_custom"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+
+        <me.zhanghai.android.materialratingbar.MaterialRatingBar
+            android:id="@+id/library_custom_decimal_ratingbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:stepSize="0.01"
+            app:mrb_progressDrawableEnabled="@drawable/ic_pets_black_24dp"
+            app:mrb_progressDrawableDisabled="@drawable/ic_pets_black_24dp"
+            style="@style/Widget.MaterialRatingBar.RatingBar.Indicator" />
+
     </LinearLayout>
 </ScrollView>

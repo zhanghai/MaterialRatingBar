@@ -23,7 +23,8 @@ public class MainActivity extends AppCompatActivity {
     @BindViews({
             R.id.framework_decimal_ratingbar,
             R.id.library_decimal_ratingbar,
-            R.id.library_tinted_decimal_ratingbar
+            R.id.library_tinted_decimal_ratingbar,
+            R.id.library_custom_decimal_ratingbar
     })
     RatingBar[] mDecimalRatingBars;
 

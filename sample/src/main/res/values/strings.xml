@@ -15,6 +15,7 @@
     <string name="framework_implementation">Framework Implementation</string>
     <string name="library_implementation">Library Implementation</string>
     <string name="library_implementation_tinted">Library Implementation (Tinted)</string>
+    <string name="library_implementation_custom">Library Implementation (Custom Drawable)</string>
     <string name="action_about">About</string>
 
     <string name="about_title">About</string>
