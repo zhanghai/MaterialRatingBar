@@ -18,18 +18,17 @@ import me.zhanghai.android.materialratingbar.internal.ThemeUtils;
 
 public class MaterialRatingDrawable extends LayerDrawable {
 
-    public MaterialRatingDrawable(Context context, boolean fillBackgroundStars) {
+    public MaterialRatingDrawable(Context context, boolean fillBackgroundStars,
+                                  int drawableEnabledResId, int drawableDisabledResId) {
         super(new Drawable[] {
                 createLayerDrawableWithTintAttrRes(fillBackgroundStars ?
-                        R.drawable.mrb_star_icon_black_36dp
-                        : R.drawable.mrb_star_border_icon_black_36dp, fillBackgroundStars ?
+                        drawableEnabledResId : drawableDisabledResId, fillBackgroundStars ?
                         R.attr.colorControlHighlight : R.attr.colorControlNormal, context),
                 fillBackgroundStars ? createClippedLayerDrawableWithTintColor(
-                        R.drawable.mrb_star_icon_black_36dp, Color.TRANSPARENT, context)
-                        : createClippedLayerDrawableWithTintAttrRes(
-                        R.drawable.mrb_star_border_icon_black_36dp, R.attr.colorControlActivated,
-                        context),
-                createClippedLayerDrawableWithTintAttrRes(R.drawable.mrb_star_icon_black_36dp,
+                        drawableEnabledResId, Color.TRANSPARENT, context)
+                        : createClippedLayerDrawableWithTintAttrRes(drawableDisabledResId,
+                        R.attr.colorControlActivated, context),
+                createClippedLayerDrawableWithTintAttrRes(drawableEnabledResId,
                         R.attr.colorControlActivated, context)
         });
 

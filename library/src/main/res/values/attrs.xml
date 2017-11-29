@@ -44,5 +44,7 @@
             <enum name="add" value="16" />
         </attr>
         <attr name="mrb_fillBackgroundStars" format="boolean" />
+        <attr name="mrb_progressDrawableDisabled" format="reference"/>
+        <attr name="mrb_progressDrawableEnabled" format="reference"/>
     </declare-styleable>
 </resources>

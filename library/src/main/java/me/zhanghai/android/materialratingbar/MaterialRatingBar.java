@@ -98,11 +98,15 @@ public class MaterialRatingBar extends RatingBar {
                     R.styleable.MaterialRatingBar_mrb_indeterminateTintMode, -1), null);
             mProgressTintInfo.mHasIndeterminateTintMode = true;
         }
+        int drawableEnabledResId = a.getResourceId(R.styleable.MaterialRatingBar_mrb_progressDrawableEnabled,
+                R.drawable.mrb_star_icon_black_36dp);
+        int drawableDisabledResId = a.getResourceId(R.styleable.MaterialRatingBar_mrb_progressDrawableDisabled,
+                R.drawable.mrb_star_border_icon_black_36dp);
         boolean fillBackgroundStars = a.getBoolean(
                 R.styleable.MaterialRatingBar_mrb_fillBackgroundStars, isIndicator());
         a.recycle();
 
-        mDrawable = new MaterialRatingDrawable(getContext(), fillBackgroundStars);
+        mDrawable = new MaterialRatingDrawable(getContext(), fillBackgroundStars, drawableEnabledResId, drawableDisabledResId);
         mDrawable.setStarCount(getNumStars());
         setProgressDrawable(mDrawable);
     }
