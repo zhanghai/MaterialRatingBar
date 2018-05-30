@@ -29,7 +29,7 @@ Material Design `RatingBar` with better appearance, compatible with Android 3.0+
 Gradle:
 
 ```gradle
-compile 'me.zhanghai.android.materialratingbar:library:1.3.1'
+implementation 'me.zhanghai.android.materialratingbar:library:1.3.1'
 ```
 
 ## Usage
