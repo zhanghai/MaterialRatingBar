@@ -20,7 +20,7 @@ Material Design `RatingBar` with better appearance, compatible with Android 3.0+
 
 <a href="https://play.google.com/store/apps/details?id=me.zhanghai.android.materialratingbar.sample" target="_blank"><img alt="Google Play" height="90" src="https://play.google.com/intl/en_US/badges/images/generic/en_badge_web_generic.png"/></a>
 
-[Sample APK](//github.com/DreaminginCodeZH/MaterialRatingBar/releases/download/v1.3.2/sample-release.apk)
+[Sample APK](//github.com/zhanghai/MaterialRatingBar/releases/download/v1.3.2/sample-release.apk)
 
 ![Sample app](screenshot/sample_app.jpg)
 
@@ -55,7 +55,7 @@ You can use `app:mrb_fillBackgroundStars` to control whether background stars ar
 
 An `OnRatingChangeListener` interface is also added to `MaterialRatingBar`, which enables callback while user is dragging, just as the listener in `SeekBar`.
 
-For a detailed example, you can refer to the [sample app's layout](//github.com/DreaminginCodeZH/MaterialRatingBar/blob/master/sample/src/main/res/layout/main_activity.xml), where you can find examples such as tinting and wide layout.
+For a detailed example, you can refer to the [sample app's layout](//github.com/zhanghai/MaterialRatingBar/blob/master/sample/src/main/res/layout/main_activity.xml), where you can find examples such as tinting and wide layout.
 
 ## Design
 
