@@ -152,6 +152,10 @@ public class MaterialRatingBar extends RatingBar {
     @Nullable
     @Override
     public ColorStateList getProgressTintList() {
+        // Samsung Android 10 might call this in super class constructor.
+        if (mProgressTintInfo == null) {
+            return null;
+        }
         logRatingBarTintWarning();
         return getSupportProgressTintList();
     }
