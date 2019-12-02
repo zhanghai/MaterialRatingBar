@@ -20,7 +20,7 @@ Material Design `RatingBar` with better appearance, compatible with Android 3.0+
 
 <a href="https://play.google.com/store/apps/details?id=me.zhanghai.android.materialratingbar.sample" target="_blank"><img alt="Google Play" height="90" src="https://play.google.com/intl/en_US/badges/images/generic/en_badge_web_generic.png"/></a>
 
-[Sample APK](//github.com/zhanghai/MaterialRatingBar/releases/download/v1.3.3/sample-release.apk)
+[Sample APK](//github.com/zhanghai/MaterialRatingBar/releases/download/v1.4.0/sample-release.apk)
 
 ![Sample app](screenshot/sample_app.jpg)
 
@@ -29,7 +29,7 @@ Material Design `RatingBar` with better appearance, compatible with Android 3.0+
 Gradle:
 
 ```gradle
-implementation 'me.zhanghai.android.materialratingbar:library:1.3.3'
+implementation 'me.zhanghai.android.materialratingbar:library:1.4.0'
 ```
 
 ## Usage
