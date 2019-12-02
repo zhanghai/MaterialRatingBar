@@ -7,7 +7,6 @@ package me.zhanghai.android.materialratingbar.sample;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.animation.Animation;
@@ -15,6 +14,7 @@ import android.view.animation.LinearInterpolator;
 import android.view.animation.Transformation;
 import android.widget.RatingBar;
 
+import androidx.appcompat.app.AppCompatActivity;
 import butterknife.BindViews;
 import butterknife.ButterKnife;
 

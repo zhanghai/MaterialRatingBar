@@ -11,9 +11,9 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
-import android.support.v7.content.res.AppCompatResources;
 import android.view.Gravity;
 
+import androidx.appcompat.content.res.AppCompatResources;
 import me.zhanghai.android.materialratingbar.internal.ThemeUtils;
 
 public class MaterialRatingDrawable extends LayerDrawable {

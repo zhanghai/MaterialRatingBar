@@ -8,7 +8,8 @@ package me.zhanghai.android.materialratingbar;
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.NonNull;
+
+import androidx.annotation.NonNull;
 
 class TileDrawable extends BaseDrawable {
 

@@ -11,8 +11,9 @@ import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.support.v4.app.NavUtils;
-import android.support.v4.app.TaskStackBuilder;
+
+import androidx.core.app.NavUtils;
+import androidx.core.app.TaskStackBuilder;
 
 public class AppUtils {
 
